@@ -1,0 +1,29 @@
+{% extends "interface/base.html" %}
+
+{% block content %}
+
+<div id="container">
+    <section id="info">
+        {% with m=messages %}
+            {% include 'interface/includes/messages.html' %}
+        {% endwith %}
+        <div class="container text-center">
+            <h1>{{ user }}'s Dashboard</h1>
+            <p class="lead">Welcome to your dashboard. Here you can access your tweet collection and create basic interactive visualizations of the tweets gathered. Press the button below to download a CSV file containing your tweets</p>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <form method="post">
+                    <div class="input-group mb-3" style="justify-content: center;">
+                        {% csrf_token %}
+                        <button class="btn btn-outline-secondary" type="submit">Get Tweets!</button>
+                    </div>
+                </form>
+            </div>
+          </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

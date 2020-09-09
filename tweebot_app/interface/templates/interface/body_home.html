@@ -1,0 +1,55 @@
+{% extends "interface/base.html" %}
+
+{% block content %}
+
+<section id="header" class="bg-info text-white">
+    <div class="container text-center">
+      <h1>Welcome to Tweebot</h1>
+      <p class="lead">This application provides an easy to use interface for interacting with Tweepy, the Python Twitter API</p>
+      <a class="nav-link" href='/streamer' style="color:white;">Try Tweebot</a>
+    </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h2>About Tweebot</h2>
+        <p class="lead">Tweebot was created by Alexander Ilyin and is built on Django. Its purpose is to expand the existing features of Tweepy</p>
+        <p>Features:</p>
+        <ul>
+          <li>Seamless integration between Tweepy and PostgreSQL. Allows the user to stream Tweets directly to a database</li>
+          <li>Provides an overview of streamed tweets, including summary statistics and visualizations</li>
+          <li>Employs a Keras Recurrent Neural Network to learn from real Twitter data. Models are trained on different categories of Tweets, and are called using a REST API structure</li>
+          <li>Source repo: <a href='http://github.com/alexilyin1'>GitHub</a></li>
+          <li>To purge an account, follow the following <a href='/purge'>link</a></li>
+          <li>NOTE: All accounts and stored tweets are purged on a monthly basis</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h2>Demo</h2>
+        <p class="lead">Follow this <a href="/demo">link</a> for a startup guide and demo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h2>Contact us</h2>
+        <p class="lead">Thanks for checking out Tweebot! For more of my projects check out my GitHub. I'm always open to collaborating on a data science project!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

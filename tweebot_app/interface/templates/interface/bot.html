@@ -1,0 +1,41 @@
+{% extends "interface/base.html" %}
+
+{% block content %}
+  <section id="header" class="bg-secondary text-white">
+      <div class="container text-center">
+        <h1>Bots</h1>
+        <p class="lead">On this page, users are given the functionality to use and create Twitter bots</p>
+        <a class="nav-link js-scroll-trigger" href='#about' style="color:white;">Get Started!</a>
+      </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Option 1: Pre-trained Bots</h2>
+          <p>As part of the creation of Tweebot, I created and trained bots using Keras RNN's</p>
+          <p>Currently Available:</p>
+          <ul>
+            <li><a href="/bot/old/trump">Trump Tweets</a></li>
+            <li><a href="/bot/old/covid">Covid-19 Tweets</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Option 2: Newly trained bots</h2>
+          <p>Using newly gathered tweets, train your own Twitter bots using Keras. Follow the link below to get started:</p>
+          <ul>
+            <li><a href="/bot/newbot">New Bot</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

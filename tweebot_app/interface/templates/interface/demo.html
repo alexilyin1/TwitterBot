@@ -1,0 +1,57 @@
+{% extends "interface/base.html" %}
+
+{% block content %}
+
+{% load static %}
+<style type="text/css">
+  img {
+    transition:transform 0.25s ease;
+  }
+
+  img:hover {
+      -webkit-transform:scale(1.5);
+      transform:scale(1.5);
+  }
+</style>
+
+<section id="header" class="bg-info text-white">
+    <div class="container text-center">
+      <h1>Tweebot Demo</h1>
+      <a class="nav-link js-scroll-trigger" href='#step1' style="color:white;">Start Demo</a>
+    </div>
+</section>
+
+<section id="step1" class="bg-light">
+  <div class="container text-center">
+    <p class="lead">Step 1: Start Stream</p>
+    <img src="{% static 'interface/imgs/streamer.gif' %}" width="500" height="450">
+    <a href="/streamer">
+      <p class="lead" style="padding-top: 15px;">Try this step</p>
+    </a>
+  </div>
+</section>
+
+<section id="step2">
+  <div class="container text-center">
+    <p class="lead">Step 2: Access Tweets</p>
+    <img src="{% static 'interface/imgs/login_dash.gif' %}" width="500" height="450">
+    <a href="/login">
+      <p class="lead" style="padding-top: 15px;">Try this step</p>
+    </a>
+    <p>NOTE: This step only works after completing Step 1 and receiving an access code in your email inbox</p>
+  </div>
+</section>
+
+<section id="optional">
+  <div class="container text-center">
+    <p class="lead">Optional 1: Purge Account</p>
+    <img src="{% static 'interface/imgs/login_dash.gif' %}" width="500" height="450">
+    <a href="/login">
+      <p class="lead" style="padding-top: 15px;">Try this step</p>
+    </a>
+    <p>NOTE: This step only works after completing Step 1 and receiving an access code in your email inbox</p>
+  </div>
+</section>
+
+
+{% endblock %}

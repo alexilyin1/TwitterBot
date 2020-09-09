@@ -1,0 +1,41 @@
+{% extends "interface/base.html" %}
+
+{% block content %}
+
+<div id="container">
+    <section id="info">
+        {% with m=messages %}
+            {% include 'interface/includes/messages.html' %}
+        {% endwith %}
+        <div class="container text-center">
+            <h1>{{ url }} Twitter Bot</h1>
+            <p class="lead">Press the button below to generate tweets using tweets generated from tweets about {{ url }}: </p>
+            <p>Note: A new tweet will be generated every time the page is reloaded</p>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <form method="post" id="SubmitForm">
+                    <div class="input-group mb-3" style="justify-content: center;">
+                        {% csrf_token %}
+                        <button class="btn btn-outline-secondary" type="submit">Get Tweets!</button>
+                    </div>
+                </form>
+            </div>
+          </div>
+        </div>
+    </section>
+    {% if submitted %}
+    <section id="tweet" class="bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <p class="lead">{{ message }}</p>
+            </div>
+          </div>
+        </div>
+    </section>
+    {% endif %}
+</div>
+
+{% endblock %}

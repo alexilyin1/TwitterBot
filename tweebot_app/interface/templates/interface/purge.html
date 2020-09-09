@@ -1,0 +1,31 @@
+{% extends "interface/base.html" %}
+
+{% block content %}
+
+<div id="container" style="height: 85%; padding-top: 220px;">
+    {% with m=messages %}
+        {% include 'interface/includes/messages.html' %}
+    {% endwith %}
+    <div class="container text-center">
+        <h1>Enter your email below to be removed from the database</h1>
+        <p class="lead">WARNING: This operation can not be rolled back!</p>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <form method="post">
+                <div class="input-group mb-3" style="padding-top: 30px;">
+                    {% csrf_token %}
+                    {{ form.email.errors }}
+                    {{ form.email }}
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,6 @@
+# Default ignored files
+/venv 
+/workspace.xml
+*keys.py
+*.csv 
+*settings.py

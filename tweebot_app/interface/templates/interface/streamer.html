@@ -1,0 +1,47 @@
+{% extends "interface/base.html" %}
+
+{% block content %}
+<!--<div class="well bs-sidebar affix" id="sidebar" style="background-color:#fff">-->
+<div id="container">
+    <section id="header" class="bg-info text-white">
+          <div class="container text-center">
+            <h1>Streamer</h1>
+            <p class="lead">The Tweebot streamer allows for communication between Tweepy API and a Postgres server</p>
+            <a class="nav-link js-scroll-trigger" style="color:white;" href="#startstream">Get Started</a>
+          </div>
+    </section>
+
+    <section id="startstream">
+        {% with m=messages %}
+            {% include 'interface/includes/messages.html' %}
+        {% endwith %}
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <h2>Get started</h2>
+              <p class="lead">To get started, enter the "topic" you want to stream tweets for (i.e. Trump, COVID-19), the length of time (in minutes) to you want to stream for, and your email. Once your stream has completed, you will receive a link to a unique URL where you can access your data and create visualizations.</p>
+              <p>Note: The rate of streaming fluctuates depending on the popularity of the topic, but for popular topics it is approximately 5000 tweets/min. For security reasons, you can only enter one email at a time</p>
+                <form method="post">
+                    <div class="input-group mb-3">
+                        {% csrf_token %}
+                        {{ form.topic.errors }}
+                        {{ form.topic }}
+                    </div>
+                    <div class="input-group mb-3">
+                        {{ form.stream_time.errors }}
+                        {{ form.stream_time }}
+                    </div>
+                    <div class="input-group mb-3">
+                        {{ form.email.errors }}
+                        {{ form.email }}
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+          </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
